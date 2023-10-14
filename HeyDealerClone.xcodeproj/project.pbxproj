@@ -24,6 +24,9 @@
 		9D70CF782AD99C51004A329D /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D70CF6F2AD99C51004A329D /* Pretendard-Light.otf */; };
 		9D70CF7B2AD9A927004A329D /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D70CF7A2AD9A927004A329D /* WebView.swift */; };
 		9D70CF7D2AD9B0B0004A329D /* OnboardingAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D70CF7C2AD9B0B0004A329D /* OnboardingAnimationView.swift */; };
+		9D8FCFA12ADA54BD00009528 /* toy_car.scn in Resources */ = {isa = PBXBuildFile; fileRef = 9D8FCFA02ADA54BD00009528 /* toy_car.scn */; };
+		9D8FCFA32ADA54F700009528 /* CustomSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8FCFA22ADA54F700009528 /* CustomSceneView.swift */; };
+		9D8FCFA52ADA55A200009528 /* CarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8FCFA42ADA55A200009528 /* CarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		9D70CF792AD99C85004A329D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9D70CF7A2AD9A927004A329D /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		9D70CF7C2AD9B0B0004A329D /* OnboardingAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingAnimationView.swift; sourceTree = "<group>"; };
+		9D8FCFA02ADA54BD00009528 /* toy_car.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = toy_car.scn; sourceTree = "<group>"; };
+		9D8FCFA22ADA54F700009528 /* CustomSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSceneView.swift; sourceTree = "<group>"; };
+		9D8FCFA42ADA55A200009528 /* CarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,7 @@
 		9D70CF472AD99A2B004A329D = {
 			isa = PBXGroup;
 			children = (
+				9D8FCFA02ADA54BD00009528 /* toy_car.scn */,
 				9D70CF522AD99A2B004A329D /* HeyDealerClone */,
 				9D70CF512AD99A2B004A329D /* Products */,
 			);
@@ -81,8 +88,10 @@
 				9D70CF792AD99C85004A329D /* Info.plist */,
 				9D70CF532AD99A2B004A329D /* HeyDealerCloneApp.swift */,
 				9D70CF552AD99A2B004A329D /* ContentView.swift */,
+				9D8FCFA22ADA54F700009528 /* CustomSceneView.swift */,
 				9D70CF612AD99B45004A329D /* OnboardingView.swift */,
 				9D70CF7C2AD9B0B0004A329D /* OnboardingAnimationView.swift */,
+				9D8FCFA42ADA55A200009528 /* CarView.swift */,
 				9D70CF7A2AD9A927004A329D /* WebView.swift */,
 				9D70CF632AD99C00004A329D /* Utilities */,
 				9D70CF572AD99A2C004A329D /* Assets.xcassets */,
@@ -182,6 +191,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D8FCFA12ADA54BD00009528 /* toy_car.scn in Resources */,
 				9D70CF732AD99C51004A329D /* Pretendard-ExtraLight.otf in Resources */,
 				9D70CF772AD99C51004A329D /* Pretendard-Medium.otf in Resources */,
 				9D70CF5B2AD99A2C004A329D /* Preview Assets.xcassets in Resources */,
@@ -204,9 +214,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D70CF622AD99B45004A329D /* OnboardingView.swift in Sources */,
+				9D8FCFA52ADA55A200009528 /* CarView.swift in Sources */,
 				9D70CF7B2AD9A927004A329D /* WebView.swift in Sources */,
 				9D70CF7D2AD9B0B0004A329D /* OnboardingAnimationView.swift in Sources */,
 				9D70CF562AD99A2B004A329D /* ContentView.swift in Sources */,
+				9D8FCFA32ADA54F700009528 /* CustomSceneView.swift in Sources */,
 				9D70CF662AD99C1B004A329D /* FontManager.swift in Sources */,
 				9D70CF542AD99A2B004A329D /* HeyDealerCloneApp.swift in Sources */,
 			);

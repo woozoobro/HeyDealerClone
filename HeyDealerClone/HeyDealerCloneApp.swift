@@ -12,7 +12,8 @@ struct HeyDealerCloneApp: App {
     var body: some Scene {
         WindowGroup {
 //            ContentView()
-            OnboardingView()
+//            OnboardingView()
+            CarView()
         }
     }
 }
