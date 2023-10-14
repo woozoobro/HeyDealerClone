@@ -20,7 +20,7 @@ struct CustomSceneView: UIViewRepresentable {
         view.scene = scene
         
         view.scene?.rootNode.scale = SCNVector3(0.5, 0.5, 0.5)
-        view.scene?.rootNode.position = SCNVector3(40, 0, 0)
+        view.scene?.rootNode.position = SCNVector3(20, 8, -1)
         
         return view
     }

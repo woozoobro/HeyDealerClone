@@ -23,47 +23,6 @@ struct OnboardingAnimationView: View {
     }
 }
 
-struct LicenseObject: View {
-    let title: String
-    var body: some View {
-        HStack {
-            circle
-            
-            Text(title)
-                .minimumScaleFactor(0.5)
-                .foregroundStyle(.shadow(.inner(color: .white.opacity(0.5), radius: 1, x: 0.5, y: 0.5)))
-                .customFont(fontWeight: .semiBold, size: 50)
-                .shadow(color: .gray.opacity(0.6), radius: 1, x: 0, y: 0)
-            
-            circle
-        }
-        .padding(.horizontal, 20)
-        .frame(height: 70)
-        .background {
-            RoundedRectangle(cornerRadius: 10)
-                .fill(.shadow(.inner(color: .gray.opacity(0.4), radius: 1, x: 1, y: 1)))
-                .foregroundColor(.white)
-                .padding(3)
-                .background { RoundedRectangle(cornerRadius: 12) }
-                .padding(3)
-                .background {
-                    RoundedRectangle(cornerRadius: 14)
-                        .fill(.white)
-                        .shadow(radius: 0.5)
-                }
-        }
-    }
-    
-    private var circle: some View {
-        Circle()
-            .fill(.shadow(.inner(color: .white.opacity(0.1), radius: 0.5, x: -0.5, y: 1)))
-            .shadow(color: .gray.opacity(0.4), radius: 0.8, x: 0, y: 1)
-            .shadow(color: .gray.opacity(0.2), radius: 1, x: 1, y: 0.5)
-            .foregroundColor(.white)
-            .frame(width: 12)
-    }
-}
-
 struct LicenseAnimation: View {
     @State private var progress: CGFloat = 0
     let title: String
@@ -75,8 +34,10 @@ struct LicenseAnimation: View {
             let radius = diameter / 2
             let angle = progress * .pi
             
-            LicenseObject(title: title)
-            .offset(x: 200)
+            LicenseObject {
+                MockLicenseText(title: title)
+            }
+            .offset(x: 180)
             .rotation3DEffect(Angle(degrees: 0), axis: (x: 0, y: 0, z: 0))
             .position(
                 x: radius * (1 - cos(angle)),
@@ -99,7 +60,6 @@ struct LicenseAnimation: View {
                             progress = 0
                         }
                     }
-                    
                 }
             }
         }

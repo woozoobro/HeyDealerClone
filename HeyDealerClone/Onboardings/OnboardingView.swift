@@ -10,22 +10,30 @@ import SwiftUI
 struct OnboardingView: View {
     @State private var showPolicy = false
     @State private var showDisagree = false
+    @State private var showCarView = false
+    @Binding var showMainView: Bool
+    @AppStorage("showMain") var showMain: Bool = false
     
     var body: some View {
-        VStack(spacing: 0) {
-            Spacer()
-            OnboardingAnimationView()
-                .frame(height: 340)
-            
-            headerSection
-            Spacer()
-            
-            policyButton
-            agreeButton
-            disagreeButton
+        if !showCarView {
+            VStack(spacing: 0) {
+                Spacer()
+                OnboardingAnimationView()
+                    .frame(height: 340)
+                
+                headerSection
+                Spacer()
+                
+                policyButton
+                agreeButton
+                disagreeButton
+            }
+            .padding(.bottom, 20)
+            .padding(.horizontal, 24)
+            .transition(.opacity)
+        } else {
+            CarView(showMainView: $showMainView)
         }
-        .padding(.bottom, 20)
-        .padding(.horizontal, 24)
     }
 }
 
@@ -69,7 +77,10 @@ extension OnboardingView {
     }
     private var agreeButton: some View {
         Button {
-            
+            withAnimation {
+                showCarView = true
+                showMain = true
+            }
         } label: {
             HStack {
                 Text("동의하고 시작")
@@ -88,7 +99,7 @@ extension OnboardingView {
     }
     private var disagreeButton: some View {
         RoundedRectangle(cornerRadius: 4)
-            .fill(showDisagree ? Color.black : Color.clear)
+            .fill(showDisagree ? Color.theme.background : Color.clear)
             .frame(height: 52)
             .frame(maxWidth: .infinity)
             .animation(.easeInOut(duration: 0.6), value: showDisagree)
@@ -135,8 +146,3 @@ struct PolicyView: View {
     }
 }
 
-struct OnboardingView_Previews: PreviewProvider {
-    static var previews: some View {
-        OnboardingView()
-    }
-}

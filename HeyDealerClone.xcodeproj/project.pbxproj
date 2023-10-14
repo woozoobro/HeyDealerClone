@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D4167D82ADAD84B00DA3983 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4167D72ADAD84B00DA3983 /* Color.swift */; };
+		9D4167DE2ADAE90900DA3983 /* MainTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4167DD2ADAE90900DA3983 /* MainTitle.swift */; };
+		9D4167E02ADAE92900DA3983 /* BuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4167DF2ADAE92900DA3983 /* BuyView.swift */; };
+		9D4167E22ADAE94700DA3983 /* SellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4167E12ADAE94700DA3983 /* SellView.swift */; };
+		9D4167E42ADAE9BD00DA3983 /* LicenseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4167E32ADAE9BD00DA3983 /* LicenseObject.swift */; };
+		9D4167E62ADAEEEC00DA3983 /* LicenseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4167E52ADAEEEC00DA3983 /* LicenseTextField.swift */; };
 		9D70CF542AD99A2B004A329D /* HeyDealerCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D70CF532AD99A2B004A329D /* HeyDealerCloneApp.swift */; };
 		9D70CF562AD99A2B004A329D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D70CF552AD99A2B004A329D /* ContentView.swift */; };
 		9D70CF582AD99A2C004A329D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D70CF572AD99A2C004A329D /* Assets.xcassets */; };
@@ -27,9 +33,16 @@
 		9D8FCFA12ADA54BD00009528 /* toy_car.scn in Resources */ = {isa = PBXBuildFile; fileRef = 9D8FCFA02ADA54BD00009528 /* toy_car.scn */; };
 		9D8FCFA32ADA54F700009528 /* CustomSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8FCFA22ADA54F700009528 /* CustomSceneView.swift */; };
 		9D8FCFA52ADA55A200009528 /* CarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8FCFA42ADA55A200009528 /* CarView.swift */; };
+		9D8FCFA72ADA90E700009528 /* MainCustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8FCFA62ADA90E700009528 /* MainCustomTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D4167D72ADAD84B00DA3983 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		9D4167DD2ADAE90900DA3983 /* MainTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTitle.swift; sourceTree = "<group>"; };
+		9D4167DF2ADAE92900DA3983 /* BuyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyView.swift; sourceTree = "<group>"; };
+		9D4167E12ADAE94700DA3983 /* SellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellView.swift; sourceTree = "<group>"; };
+		9D4167E32ADAE9BD00DA3983 /* LicenseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseObject.swift; sourceTree = "<group>"; };
+		9D4167E52ADAEEEC00DA3983 /* LicenseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseTextField.swift; sourceTree = "<group>"; };
 		9D70CF502AD99A2B004A329D /* HeyDealerClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeyDealerClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D70CF532AD99A2B004A329D /* HeyDealerCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeyDealerCloneApp.swift; sourceTree = "<group>"; };
 		9D70CF552AD99A2B004A329D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +65,7 @@
 		9D8FCFA02ADA54BD00009528 /* toy_car.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = toy_car.scn; sourceTree = "<group>"; };
 		9D8FCFA22ADA54F700009528 /* CustomSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSceneView.swift; sourceTree = "<group>"; };
 		9D8FCFA42ADA55A200009528 /* CarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarView.swift; sourceTree = "<group>"; };
+		9D8FCFA62ADA90E700009528 /* MainCustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCustomTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +79,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D4167D62ADAD83F00DA3983 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				9D4167D72ADAD84B00DA3983 /* Color.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		9D4167D92ADAE8CD00DA3983 /* Sells */ = {
+			isa = PBXGroup;
+			children = (
+				9D4167E12ADAE94700DA3983 /* SellView.swift */,
+			);
+			path = Sells;
+			sourceTree = "<group>";
+		};
+		9D4167DA2ADAE8E400DA3983 /* Buys */ = {
+			isa = PBXGroup;
+			children = (
+				9D4167DF2ADAE92900DA3983 /* BuyView.swift */,
+			);
+			path = Buys;
+			sourceTree = "<group>";
+		};
+		9D4167DB2ADAE8EA00DA3983 /* LookArounds */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LookArounds;
+			sourceTree = "<group>";
+		};
+		9D4167DC2ADAE8F600DA3983 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				9D8FCFA62ADA90E700009528 /* MainCustomTabBar.swift */,
+				9D4167DD2ADAE90900DA3983 /* MainTitle.swift */,
+				9D4167E52ADAEEEC00DA3983 /* LicenseTextField.swift */,
+				9D4167DB2ADAE8EA00DA3983 /* LookArounds */,
+				9D4167DA2ADAE8E400DA3983 /* Buys */,
+				9D4167D92ADAE8CD00DA3983 /* Sells */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
 		9D70CF472AD99A2B004A329D = {
 			isa = PBXGroup;
 			children = (
@@ -88,10 +146,8 @@
 				9D70CF792AD99C85004A329D /* Info.plist */,
 				9D70CF532AD99A2B004A329D /* HeyDealerCloneApp.swift */,
 				9D70CF552AD99A2B004A329D /* ContentView.swift */,
-				9D8FCFA22ADA54F700009528 /* CustomSceneView.swift */,
-				9D70CF612AD99B45004A329D /* OnboardingView.swift */,
-				9D70CF7C2AD9B0B0004A329D /* OnboardingAnimationView.swift */,
-				9D8FCFA42ADA55A200009528 /* CarView.swift */,
+				9D4167DC2ADAE8F600DA3983 /* MainView */,
+				9D8FCFA82ADA910D00009528 /* Onboardings */,
 				9D70CF7A2AD9A927004A329D /* WebView.swift */,
 				9D70CF632AD99C00004A329D /* Utilities */,
 				9D70CF572AD99A2C004A329D /* Assets.xcassets */,
@@ -111,6 +167,7 @@
 		9D70CF632AD99C00004A329D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				9D4167D62ADAD83F00DA3983 /* Colors */,
 				9D70CF642AD99C0D004A329D /* Fonts */,
 			);
 			path = Utilities;
@@ -131,6 +188,26 @@
 				9D70CF652AD99C1B004A329D /* FontManager.swift */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		9D8FCFA82ADA910D00009528 /* Onboardings */ = {
+			isa = PBXGroup;
+			children = (
+				9D8FCFA92ADA912600009528 /* SceneKitView */,
+				9D70CF612AD99B45004A329D /* OnboardingView.swift */,
+				9D70CF7C2AD9B0B0004A329D /* OnboardingAnimationView.swift */,
+				9D4167E32ADAE9BD00DA3983 /* LicenseObject.swift */,
+			);
+			path = Onboardings;
+			sourceTree = "<group>";
+		};
+		9D8FCFA92ADA912600009528 /* SceneKitView */ = {
+			isa = PBXGroup;
+			children = (
+				9D8FCFA22ADA54F700009528 /* CustomSceneView.swift */,
+				9D8FCFA42ADA55A200009528 /* CarView.swift */,
+			);
+			path = SceneKitView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,10 +292,17 @@
 			files = (
 				9D70CF622AD99B45004A329D /* OnboardingView.swift in Sources */,
 				9D8FCFA52ADA55A200009528 /* CarView.swift in Sources */,
+				9D4167DE2ADAE90900DA3983 /* MainTitle.swift in Sources */,
+				9D4167E22ADAE94700DA3983 /* SellView.swift in Sources */,
+				9D4167E42ADAE9BD00DA3983 /* LicenseObject.swift in Sources */,
 				9D70CF7B2AD9A927004A329D /* WebView.swift in Sources */,
+				9D4167D82ADAD84B00DA3983 /* Color.swift in Sources */,
+				9D4167E62ADAEEEC00DA3983 /* LicenseTextField.swift in Sources */,
 				9D70CF7D2AD9B0B0004A329D /* OnboardingAnimationView.swift in Sources */,
 				9D70CF562AD99A2B004A329D /* ContentView.swift in Sources */,
+				9D4167E02ADAE92900DA3983 /* BuyView.swift in Sources */,
 				9D8FCFA32ADA54F700009528 /* CustomSceneView.swift in Sources */,
+				9D8FCFA72ADA90E700009528 /* MainCustomTabBar.swift in Sources */,
 				9D70CF662AD99C1B004A329D /* FontManager.swift in Sources */,
 				9D70CF542AD99A2B004A329D /* HeyDealerCloneApp.swift in Sources */,
 			);

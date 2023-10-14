@@ -14,5 +14,7 @@
 		<string>Pretendard-Thin.otf</string>
 		<string>Pretendard-ExtraBold.otf</string>
 	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>

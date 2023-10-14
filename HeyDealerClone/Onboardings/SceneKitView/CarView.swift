@@ -9,12 +9,15 @@ import SwiftUI
 import SceneKit
 
 struct CarView: View {
-    @State var scene: SCNScene? = .init(named: "toy_car.scn")
-    @State var offset: CGFloat = 0
-    @State var showLicense: Bool = false
-    @State var moveLicense: Bool = false
+    @State private var scene: SCNScene? = .init(named: "toy_car.scn")
+    @State private var offset: CGFloat = 0
+    @State private var showLicense: Bool = false
+    @State private var moveLicense: Bool = false
+    @Binding var showMainView: Bool
     var body: some View {
         ZStack {
+            Color.blue.opacity(0.005)
+                .ignoresSafeArea()
             CustomSceneView(scene: $scene)
                 .frame(maxHeight: .infinity)
                 .shadow(radius: 20)
@@ -23,10 +26,10 @@ struct CarView: View {
                 }
                 .onAppear {
                     withAnimation {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
                             moveObjectToCenter()
                             offset = 720
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
                                 scaleObjectWithAnimation()
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                                     fadeOutObject()
@@ -37,12 +40,15 @@ struct CarView: View {
                 }
             
             if showLicense {
-                LicenseObject(title: "12가 3425")
-                    .rotation3DEffect(.zero, axis: (x: 0, y: 0, z: 0))
-                    .offset(y: moveLicense ? -200 : 0)
-                    .animation(.interactiveSpring(response: 0.3, dampingFraction: 0.6, blendDuration: 1), value: moveLicense)
+                LicenseObject {
+                    MockLicenseText(title: "12가 3425")
+                }
+                .rotation3DEffect(.zero, axis: (x: 0, y: 0, z: 0))
+                .offset(y: moveLicense ? -90 : 150)
+                .animation(.interactiveSpring(response: 0.7, dampingFraction: 0.6, blendDuration: 1), value: moveLicense)
             }
         }
+        .transition(.opacity)
     }
     
     private func rotateObject(animate: Bool = false) {
@@ -60,7 +66,7 @@ struct CarView: View {
     }
     
     private func moveObjectToCenter() {
-        let moveAction = SCNAction.move(to: SCNVector3(0,0,0), duration: 2)
+        let moveAction = SCNAction.move(to: SCNVector3(0,0,0), duration: 3)
         scene?.rootNode.runAction(moveAction)
     }
     
@@ -74,16 +80,15 @@ struct CarView: View {
         showLicense = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             moveLicense = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                withAnimation {
+                    showMainView = true
+                }
+            }
         }
         let fadeOutAction = SCNAction.fadeOpacity(to: 0, duration: 0.3)
         scene?.rootNode.childNodes.forEach { node in
             node.runAction(fadeOutAction)
         }
-    }
-}
-
-struct CarView_Previews: PreviewProvider {
-    static var previews: some View {
-        CarView()
     }
 }

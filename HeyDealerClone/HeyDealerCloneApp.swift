@@ -11,9 +11,9 @@ import SwiftUI
 struct HeyDealerCloneApp: App {
     var body: some Scene {
         WindowGroup {
-//            ContentView()
+            ContentView()
 //            OnboardingView()
-            CarView()
+//            CarView()
         }
     }
 }
