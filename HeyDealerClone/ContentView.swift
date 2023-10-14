@@ -43,9 +43,9 @@ struct ContentView: View {
                                     .tag(MainTab.lookAround)
                             }
                             .clipShape(RoundedRectangle(cornerRadius: 18))
-                            .ignoresSafeArea(.keyboard,edges: .bottom)
                         }
                         .padding(.top, 68)
+                        .ignoresSafeArea([.container, .keyboard], edges: .bottom)
                 }
             } else {
                 OnboardingView(showMainView: $showMainView)
@@ -54,11 +54,5 @@ struct ContentView: View {
         .onAppear {
             showMainView = showMain
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }

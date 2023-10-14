@@ -18,12 +18,9 @@ struct BuyView: View {
                 .onAppear {
                     focused = true
                 }
-                .onDisappear {
-                    focused = false
-                }
             
             Spacer()
         }
-        .background(Color.theme.background)
+        .background(Color.theme.background)        
     }
 }

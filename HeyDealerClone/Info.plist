@@ -14,7 +14,12 @@
 		<string>Pretendard-Thin.otf</string>
 		<string>Pretendard-ExtraBold.otf</string>
 	</array>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIImageName</key>
+		<string>heydealer_logo</string>
+		<key>UILaunchScreen</key>
+		<dict/>
+	</dict>
 </dict>
 </plist>

@@ -18,12 +18,12 @@ struct SellView: View {
                 .onAppear {
                     focused = true
                 }
-                .onDisappear {
-                    focused = false
-                }
             
             Spacer()
         }
         .background(.white)
+        .onTapGesture {
+            focused = false
+        }
     }
 }
