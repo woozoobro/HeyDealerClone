@@ -42,6 +42,7 @@ struct ContentView: View {
                                 buyFocused = false
                             } label: {
                                 Image(systemName: "list.bullet")
+                                    .foregroundColor(currentTab == .sell ? .white : .theme.background)
                             }
                             .padding(.trailing,20)
 
