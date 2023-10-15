@@ -10,8 +10,8 @@ import SwiftUI
 struct TextFieldLikeView: View {
     @Binding var text: String
     @Binding var blink: Bool
-    private let numberFontSize: CGFloat = 56
-    private let hangleFontSize: CGFloat = 40
+    private let numberFontSize: CGFloat = 54
+    private let hangleFontSize: CGFloat = 38
     private let placeholder: [Character] = Array("12가 3425")
     
     var body: some View {
@@ -20,20 +20,24 @@ struct TextFieldLikeView: View {
                 .allowsHitTesting(false)
                 .opacity(0)
             if text.isEmpty {
-                HStack(alignment: .center, spacing: 0) {
-                    ForEach(Array(placeholder.enumerated()), id: \.offset) { index, element in
-                        Text(String(element))
-                            .customFont(fontWeight: .bold, size: element.isNumber ? numberFontSize : hangleFontSize)
-                    }
+                HStack(alignment: .center, spacing: 4) {
+                    Text("12")
+                        .customFont(fontWeight: .bold, size: numberFontSize)
+                    Text("가")
+                        .customFont(fontWeight: .bold, size: hangleFontSize)
+                        .padding(.trailing)
+                    Text("3425")
+                        .customFont(fontWeight: .bold, size: numberFontSize)
                 }
+                .minimumScaleFactor(0.4)
                 .foregroundColor(.secondary)
-                .frame(maxWidth: .infinity, alignment: .center)
             }
             
             Text(text)
+                .minimumScaleFactor(0.4)
                 .foregroundColor(Color.theme.background)
                 .customFont(fontWeight: .bold, size: numberFontSize)
-                .foregroundStyle(.shadow(.inner(color: .white.opacity(0.5), radius: 1, x: 0.5, y: 0.5)))
+                .foregroundStyle(.shadow(.inner(color: .white.opacity(0.5), radius: 2, x: 0.5, y: 0.5)))
                 .shadow(color: .gray.opacity(0.6), radius: 1, x: 0, y: 0)
                 .frame(height: numberFontSize)
                 .padding(.trailing, text.isEmpty ? 0 : 6)
@@ -41,8 +45,8 @@ struct TextFieldLikeView: View {
                     CursorView(blink: $blink)
                         .animation(.easeInOut(duration: 0.2), value: text)
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
         }
-//        .minimumScaleFactor(0.5)
     }
 }
 

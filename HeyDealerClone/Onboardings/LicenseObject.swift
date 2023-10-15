@@ -16,9 +16,10 @@ struct LicenseObject<Content: View>: View {
                 .padding(.horizontal)
             circle
         }
+        .frame(maxWidth: .infinity, alignment: .center)
         .padding(.horizontal, 20)
-        .frame(height: 70)
-        .padding(.vertical, 10)
+        .frame(height: 80)
+        .padding(.vertical, 5)
         .background {
             RoundedRectangle(cornerRadius: 10)
                 .fill(.shadow(.inner(color: .gray.opacity(0.4), radius: 1, x: 1, y: 1)))
@@ -32,7 +33,7 @@ struct LicenseObject<Content: View>: View {
                         .shadow(radius: 0.5)
                 }
         }
-        .padding(.horizontal, 30)
+        .padding(.horizontal, 24)
     }
     
     private var circle: some View {

@@ -100,7 +100,7 @@ extension OnboardingView {
     private var disagreeButton: some View {
         RoundedRectangle(cornerRadius: 4)
             .fill(showDisagree ? Color.theme.background : Color.clear)
-            .frame(height: 52)
+            .frame(height: 56)
             .frame(maxWidth: .infinity)
             .animation(.easeInOut(duration: 0.6), value: showDisagree)
             .overlay {
@@ -115,7 +115,7 @@ extension OnboardingView {
                 } label: {
                     Text("만 14세 미만이거나 이용약관에 비동의합니다.")
                         .foregroundColor(.secondary)
-                        .customFont(fontWeight: .light, size: 11)
+                        .customFont(fontWeight: .light, size: 10)
                 }
             }
             .onChange(of: showDisagree) { newValue in

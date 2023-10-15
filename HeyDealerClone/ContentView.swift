@@ -60,6 +60,7 @@ struct ContentView: View {
                                     .onTapGesture { sellVM.blink = false }
                                     .onChange(of: sellVM.blink) { self.sellFocused = $0 }
                                     .onChange(of: sellFocused) { sellVM.blink = $0}
+                                    .ignoresSafeArea([.all, .keyboard], edges: .bottom)
                                 
                                 BuyView()
                                     .tag(MainTab.buy)
