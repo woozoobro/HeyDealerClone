@@ -8,18 +8,21 @@
 import SwiftUI
 
 struct LicenseTextField: View {
-    @State private var text: String = ""
+    @Binding var text: String
+    @Binding var blink: Bool
     
     var body: some View {
         LicenseObject {
-            TextField("12가 3425", text: $text)
-                .foregroundColor(.theme.background)
-                .autocorrectionDisabled()
-                .minimumScaleFactor(0.5)
-                .foregroundStyle(.shadow(.inner(color: .white.opacity(0.5), radius: 1, x: 0.5, y: 0.5)))
-                .customFont(fontWeight: .semiBold, size: 50)
-                .shadow(color: .gray.opacity(0.6), radius: 1, x: 0, y: 0)
-                .padding(.horizontal)
+            TextFieldLikeView(text: $text, blink: $blink)
+//                .toolbarBackground(.hidden, for: .automatic)
+//                .toolbar(.hidden, for: .automatic)
+//                .autocorrectionDisabled()
+//                .foregroundColor(.theme.background)
+//                .minimumScaleFactor(0.5)
+//                .foregroundStyle(.shadow(.inner(color: .white.opacity(0.5), radius: 1, x: 0.5, y: 0.5)))
+//                .shadow(color: .gray.opacity(0.6), radius: 1, x: 0, y: 0)
+//                .customFont(fontWeight: .semiBold, size: 50)
+//                .padding(.horizontal)
         }
     }
 }

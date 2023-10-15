@@ -15,6 +15,8 @@ struct ContentView: View {
     @FocusState private var sellFocused: Bool
     @FocusState private var buyFocused: Bool
     
+    @EnvironmentObject private var sellVM: SellViewModel
+    
     init() {
         UITabBar.appearance().isHidden = true
     }
@@ -30,47 +32,52 @@ struct ContentView: View {
                             } else {
                                 Color.white
                             }
-                        }.ignoresSafeArea()
-                        
-                        HStack(spacing: 0) {
-                            MainCustomTabBar(currentTab: $currentTab)
-                                .preferredColorScheme(currentTab == .sell ? isSidebarVisible ? .light : .dark : .light)
-                            
-                            Button {
-                                isSidebarVisible.toggle()
-                                sellFocused = false
-                                buyFocused = false
-                            } label: {
-                                Image(systemName: "list.bullet")
-                                    .foregroundColor(currentTab == .sell ? .white : .theme.background)
-                            }
-                            .padding(.trailing,20)
-
                         }
+                        .ignoresSafeArea()
                         
-                        RoundedRectangle(cornerRadius: 18)
-                            .fill(Color.orange)
-                            .overlay {
-                                TabView(selection: $currentTab) {
-                                    SellView()
-                                        .tag(MainTab.sell)
-                                        .focused($sellFocused)
-                                        .onAppear { sellFocused = true }
-                                        .onTapGesture { sellFocused = false }
-                                    
-                                    BuyView()
-                                        .tag(MainTab.buy)
-                                        .focused($buyFocused)
-                                        .onAppear { buyFocused = true }
-                                        .onTapGesture { buyFocused = false }
-                                    
-                                    Text("차구경!")
-                                        .tag(MainTab.lookAround)
+                        VStack(spacing: 0) {
+                            HStack(spacing: 0) {
+                                MainCustomTabBar(currentTab: $currentTab)
+                                    .preferredColorScheme(currentTab == .sell ? isSidebarVisible ? .light : .dark : .light)
+                                
+                                Button {
+                                    isSidebarVisible.toggle()
+                                    sellVM.blink = false
+                                    buyFocused = false
+                                } label: {
+                                    Image(systemName: "list.bullet")
+                                        .foregroundColor(currentTab == .sell ? .white : .theme.background)
                                 }
-                                .clipShape(RoundedRectangle(cornerRadius: 18))
+                                .padding(.trailing,20)
                             }
-                            .padding(.top, 68)
-                            .ignoresSafeArea([.container, .keyboard], edges: .bottom)
+                            
+                            TabView(selection: $currentTab) {
+                                SellView()
+                                    .tag(MainTab.sell)
+                                    .background(.white)
+                                    .focused($sellFocused)
+                                    .onAppear { sellVM.blink = true }
+                                    .onTapGesture { sellVM.blink = false }
+                                    .onChange(of: sellVM.blink) { self.sellFocused = $0 }
+                                    .onChange(of: sellFocused) { sellVM.blink = $0}
+                                
+                                BuyView()
+                                    .tag(MainTab.buy)
+                                    .focused($buyFocused)
+                                    .onAppear { buyFocused = true }
+                                    .onTapGesture { buyFocused = false }
+                                
+                                ScrollView() {
+                                    Text("차구경!")
+                                    Rectangle()
+                                }
+                                .scrollDisabled(true)
+                                .background(Color.theme.background)
+                                .tag(MainTab.lookAround)
+                            }
+                            .clipShape(RoundedRectangle(cornerRadius: 18))
+                            .ignoresSafeArea([.all, .keyboard], edges: .bottom)
+                        }
                     }
                     
                     Sidebar(isSidebarVisible: $isSidebarVisible)
