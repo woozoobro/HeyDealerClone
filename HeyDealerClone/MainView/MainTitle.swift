@@ -16,7 +16,7 @@ struct MainTitle: View {
             .customFont(fontWeight: .bold, size: 32)
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal, 50)
-            .padding(.top, 70)
+            .padding(.top, 60)
             .lineSpacing(14)
     }
 }

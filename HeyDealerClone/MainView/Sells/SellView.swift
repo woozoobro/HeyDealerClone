@@ -19,7 +19,7 @@ final class SellViewModel: ObservableObject {
 struct SellView: View {
     @EnvironmentObject private var sellVM: SellViewModel
     var body: some View {
-        VStack(spacing: 50) {
+        VStack(spacing: 40) {
             MainTitle(title: "먼저, 내 차 시세를\n알아볼까요?", fontColor: .theme.background)
             
             LicenseTextField(text: $sellVM.text, blink: $sellVM.blink)

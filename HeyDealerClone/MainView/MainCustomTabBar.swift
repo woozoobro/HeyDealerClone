@@ -25,7 +25,7 @@ struct MainCustomTabBar: View {
                     }
                 } label: {
                     Text(tab.rawValue)
-                        .foregroundColor(currentTab == tab ? currentTab == .sell ? .white : .black : .secondary)
+                        .foregroundColor(currentTab == tab ? currentTab == .sell ? .white : .black : .gray)
                         .customFont(fontWeight: .bold, size: 16)
                         .frame(width: 88)
                         .background(alignment: .bottom) {

@@ -10,16 +10,15 @@ import SwiftUI
 struct LicenseObject<Content: View>: View {
     @ViewBuilder var content: Content
     var body: some View {
-        HStack {
+        HStack(spacing: 0) {
+            Spacer(minLength: 0)
             circle
             content
-                .padding(.horizontal)
             circle
+            Spacer(minLength: 0)
         }
-        .frame(maxWidth: .infinity, alignment: .center)
-        .padding(.horizontal, 20)
-        .frame(height: 80)
-        .padding(.vertical, 5)
+        .padding(.horizontal, 12)
+        .padding(.vertical, 8)
         .background {
             RoundedRectangle(cornerRadius: 10)
                 .fill(.shadow(.inner(color: .gray.opacity(0.4), radius: 1, x: 1, y: 1)))
@@ -42,17 +41,42 @@ struct LicenseObject<Content: View>: View {
             .shadow(color: .gray.opacity(0.4), radius: 0.8, x: 0, y: 1)
             .shadow(color: .gray.opacity(0.2), radius: 1, x: 1, y: 0.5)
             .foregroundColor(.white)
-            .frame(width: 12)
+            .frame(width: 12, height: 12)
     }
 }
 
 struct MockLicenseText: View {
-    let title: String
+    private let numberFontSize: CGFloat = 50
+    private let hangleFontSize: CGFloat = 38
+    
     var body: some View {
+        HStack(alignment: .center, spacing: 4) {
+            Text("12")
+                .customFont(fontWeight: .bold, size: numberFontSize)
+            Text("가")
+                .customFont(fontWeight: .bold, size: hangleFontSize)
+                .padding(.trailing)
+            Text("3425")
+                .customFont(fontWeight: .bold, size: numberFontSize)
+        }
+        .minimumScaleFactor(0.3)
+        .foregroundStyle(.shadow(.inner(color: .white.opacity(0.7), radius: 1, x: 0.5, y: 0.5)))
+        .shadow(color: .gray.opacity(0.6), radius: 1, x: 0, y: 0)
+    }
+}
+
+struct MockLicenseText2: View {
+    let title: String
+    private let numberFontSize: CGFloat = 50
+    
+    var body: some View {
+        
         Text(title)
-            .minimumScaleFactor(0.5)
-            .foregroundStyle(.shadow(.inner(color: .white.opacity(0.5), radius: 1, x: 0.5, y: 0.5)))
-            .customFont(fontWeight: .semiBold, size: 50)
+            .multilineTextAlignment(.center)
+            .customFont(fontWeight: .bold, size: numberFontSize)
+            .minimumScaleFactor(0.3)
+            .foregroundStyle(.shadow(.inner(color: .white.opacity(0.7), radius: 1, x: 0.5, y: 0.5)))
             .shadow(color: .gray.opacity(0.6), radius: 1, x: 0, y: 0)
     }
 }
+

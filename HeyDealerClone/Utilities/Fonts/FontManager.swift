@@ -32,7 +32,7 @@ struct FontManager: ViewModifier {
 }
 
 extension View {
-    func customFont(fontWeight: FontWeight, size: CGFloat, textStyle: Font.TextStyle = .title) -> some View {
+    func customFont(fontWeight: FontWeight, size: CGFloat, textStyle: Font.TextStyle = .body) -> some View {
         modifier(FontManager(fontWeight: fontWeight, size: size, textStyle: textStyle))
     }
 }

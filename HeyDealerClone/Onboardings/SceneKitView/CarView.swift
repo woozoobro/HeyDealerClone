@@ -41,10 +41,10 @@ struct CarView: View {
             
             if showLicense {
                 LicenseObject {
-                    MockLicenseText(title: "12가 3425")
+                    MockLicenseText()
                 }
                 .rotation3DEffect(.zero, axis: (x: 0, y: 0, z: 0))
-                .offset(y: moveLicense ? -90 : 150)
+                .offset(y: moveLicense ? -80 : 150)
                 .animation(.interactiveSpring(response: 0.7, dampingFraction: 0.6, blendDuration: 1), value: moveLicense)
             }
         }
