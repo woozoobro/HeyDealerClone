@@ -12,7 +12,42 @@ final class SellViewModel: ObservableObject {
     @Published var text: String = ""
     
     func updateText(newValue: String) {
-        text = CharacterSet.filterHangulAndNumbers(from: newValue)
+        var filteredValue = CharacterSet.filterHangulAndNumbers(from: newValue)
+        
+        if let firstHangul = filteredValue.first, !firstHangul.isNumber {
+            let hanguls = filteredValue.filter { CharacterSet.isJamo($0.unicodeScalars.first!) }
+            if hanguls.count > 2 {
+                filteredValue = filteredValue.replacingOccurrences(of: String(hanguls), with: String(hanguls.prefix(2)))
+            }
+        }
+        
+        if let firstCharacter = filteredValue.first, firstCharacter.isNumber {
+            let firstNumbers = filteredValue.prefix{ $0.isNumber }
+            if firstNumbers.count > 3 {
+                filteredValue = String(firstNumbers.prefix(3)) + filteredValue.dropFirst(firstNumbers.count)
+            }
+            
+            if let firstNumberIndex = filteredValue.firstIndex(where: { $0.isNumber }) {
+                let secondNumbers = filteredValue[firstNumberIndex...].filter { $0.isNumber }
+                if secondNumbers.count > 7 {
+                    let excessNumbersCount = secondNumbers.count - 7
+                    filteredValue = String(filteredValue.dropLast(excessNumbersCount))
+                }
+            }
+            
+            let hangulCharacters = filteredValue.filter { CharacterSet.isJamo($0.unicodeScalars.first!) }
+            if hangulCharacters.count > 1 {
+                filteredValue = filteredValue.replacingOccurrences(of: String(hangulCharacters), with: String(hangulCharacters.first!))
+            }
+        }
+        
+        text = filteredValue
+    }
+}
+
+extension String {
+    var isHangul: Bool {
+        unicodeScalars.contains { CharacterSet.modernHangul.contains($0) }
     }
 }
 

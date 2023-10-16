@@ -88,7 +88,7 @@ struct ContentView: View {
             }
         }
         .onAppear {
-//            showMainView = showMain
+            showMainView = showMain
         }
     }
 }
