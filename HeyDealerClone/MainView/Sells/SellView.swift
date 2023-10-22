@@ -14,13 +14,6 @@ final class SellViewModel: ObservableObject {
     func updateText(newValue: String) {
         var filteredValue = CharacterSet.filterHangulAndNumbers(from: newValue)
         
-        if let firstHangul = filteredValue.first, !firstHangul.isNumber {
-            let hanguls = filteredValue.filter { CharacterSet.isJamo($0.unicodeScalars.first!) }
-            if hanguls.count > 2 {
-                filteredValue = filteredValue.replacingOccurrences(of: String(hanguls), with: String(hanguls.prefix(2)))
-            }
-        }
-        
         if let firstCharacter = filteredValue.first, firstCharacter.isNumber {
             let firstNumbers = filteredValue.prefix{ $0.isNumber }
             if firstNumbers.count > 3 {
