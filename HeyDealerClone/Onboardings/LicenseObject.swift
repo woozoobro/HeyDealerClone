@@ -11,11 +11,9 @@ struct LicenseObject<Content: View>: View {
     @ViewBuilder var content: Content
     var body: some View {
         HStack(spacing: 0) {
-            Spacer(minLength: 0)
             circle
             content
             circle
-            Spacer(minLength: 0)
         }
         .padding(.horizontal, 12)
         .padding(.vertical, 8)
@@ -41,20 +39,20 @@ struct LicenseObject<Content: View>: View {
             .shadow(color: .gray.opacity(0.4), radius: 0.8, x: 0, y: 1)
             .shadow(color: .gray.opacity(0.2), radius: 1, x: 1, y: 0.5)
             .foregroundColor(.white)
-            .frame(width: 12, height: 12)
+            .frame(width: 11, height: 11)
     }
 }
 
 struct MockLicenseText: View {
     private let numberFontSize: CGFloat = 50
-    private let hangleFontSize: CGFloat = 38
+    private let hangulFontSize: CGFloat = 38
     
     var body: some View {
         HStack(alignment: .center, spacing: 4) {
             Text("12")
                 .customFont(fontWeight: .bold, size: numberFontSize)
             Text("가")
-                .customFont(fontWeight: .bold, size: hangleFontSize)
+                .customFont(fontWeight: .bold, size: hangulFontSize)
                 .padding(.trailing)
             Text("3425")
                 .customFont(fontWeight: .bold, size: numberFontSize)

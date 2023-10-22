@@ -12,10 +12,8 @@ struct ContentView: View {
     @State private var showMainView: Bool = false
     @State private var isSidebarVisible: Bool = false
     @AppStorage("showMain") var showMain: Bool = false
-    @FocusState private var sellFocused: Bool
     @FocusState private var buyFocused: Bool
-    
-    @EnvironmentObject private var sellVM: SellViewModel
+//    @State private var sellBlink: Bool = false
     
     init() {
         UITabBar.appearance().isHidden = true
@@ -42,7 +40,7 @@ struct ContentView: View {
                                 
                                 Button {
                                     isSidebarVisible.toggle()
-                                    sellVM.blink = false
+                                    UIApplication.shared.endEditing()
                                     buyFocused = false
                                 } label: {
                                     Image(systemName: "list.bullet")
@@ -55,12 +53,10 @@ struct ContentView: View {
                                 SellView()
                                     .tag(MainTab.sell)
                                     .background(.white)
-                                    .focused($sellFocused)
-                                    .onAppear { sellVM.blink = true }
-                                    .onTapGesture { sellVM.blink = false }
-                                    .onChange(of: sellVM.blink) { self.sellFocused = $0 }
-                                    .onChange(of: sellFocused) { sellVM.blink = $0}
                                     .ignoresSafeArea([.all, .keyboard], edges: .bottom)
+                                    .onTapGesture {
+                                        UIApplication.shared.endEditing()
+                                    }
                                 
                                 BuyView()
                                     .tag(MainTab.buy)
@@ -80,7 +76,7 @@ struct ContentView: View {
                             .ignoresSafeArea([.all, .keyboard], edges: .bottom)
                         }
                     }
-                    
+                                                            
                     Sidebar(isSidebarVisible: $isSidebarVisible)
                 }
             } else {
@@ -93,4 +89,10 @@ struct ContentView: View {
     }
 }
 
+import UIKit
+extension UIApplication {
+    func endEditing() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
 
