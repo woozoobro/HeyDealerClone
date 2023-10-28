@@ -9,21 +9,27 @@ import SwiftUI
 
 final class SellViewModel: ObservableObject {
     @Published var text: String = ""
+    @Published var licenseType: LicenseType = .normal
+    enum LicenseType {
+        case normal
+        case yellow
+        case green
+    }
     
     func updateText(newValue: String) {
         // 숫자와 한글 이외에 필터링
         var filteredValue = CharacterSet.filterHangulAndNumbers(from: newValue)
                 
         if let firstCharacter = filteredValue.first, firstCharacter.isNumber {
-            filteredValue = handleFirstNumberCase(in: filteredValue)
+            filteredValue = processNumberCase(in: filteredValue)
         } else {
-            filteredValue = handleFirstHangulCase(in: filteredValue)
+            filteredValue = processHangulCase(in: filteredValue)
         }
-        
+        print(licenseType)
         text = filteredValue
     }
     
-    private func handleFirstNumberCase(in value: String) -> String {
+    private func processNumberCase(in value: String) -> String {
         // 첫번째 숫자, 한글, 그리고 두번째 숫자로 나누기
         let firstNumbers = value.prefix{ $0.isNumber }
         let hangulAndSecondNumbers = value.dropFirst(firstNumbers.count)
@@ -44,24 +50,48 @@ final class SellViewModel: ObservableObject {
         return result
     }
     
-    private func handleFirstHangulCase(in value: String) -> String {
+    private func processHangulCase(in value: String) -> String {
         let firstHangul = value.prefix { CharacterSet.isJamo($0.unicodeScalars.first!) }
         let numbersAndRest = value.dropFirst(firstHangul.count)
-        
+                
         var result = String(firstHangul.count > 2 ? firstHangul.prefix(2) : firstHangul)
         
         if numbersAndRest.count > 0 {
-            result += handleFirstNumberCase(in: String(numbersAndRest))
+            let restString = processNumberCase(in: String(numbersAndRest))
+            result += restString
+            updateLicenseType(for: restString)
+            print(restString)
         }
         
         return result
     }
     
+    //TODO: - 바,사,아,자 들어가면 yellow
+    //TODO: - letter로 시작하고 위의 케이스 이외에 종성이 나오면 green
+    //TODO: - 이외엔 normal
+    private func updateLicenseType(for restString: String) {
+        if isYellowCase(restString) {
+            licenseType = .yellow
+        } else if isGreenCase(restString) {
+            licenseType = .green
+        } else {
+            licenseType = .normal
+        }
+    }
+    
+    private func isYellowCase(_ rest: String) -> Bool {
+        ["바","사","아","자"].contains(where: {rest.contains($0)})
+    }
+    
+    private func isGreenCase(_ rest: String) -> Bool {
+        let notGreenCase = ["바", "사", "아", "자", "ㅂ", "ㅇ", "ㅅ", "ㅈ"]
+        return rest.containsHangul && !notGreenCase.contains(where: { rest.contains($0) })
+    }
 }
 
 extension String {
-    var isHangul: Bool {
-        unicodeScalars.contains { CharacterSet.modernHangul.contains($0) }
+    var containsHangul: Bool {
+        unicodeScalars.contains { CharacterSet.isJamo($0) }
     }
 }
 

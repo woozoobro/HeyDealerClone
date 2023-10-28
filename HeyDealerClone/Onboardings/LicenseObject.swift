@@ -13,8 +13,9 @@ struct LicenseObject<Content: View>: View {
         HStack(spacing: 0) {
             circle
             content
+                .frame(maxWidth: .infinity)
             circle
-        }
+        }        
         .padding(.horizontal, 12)
         .padding(.vertical, 8)
         .background {

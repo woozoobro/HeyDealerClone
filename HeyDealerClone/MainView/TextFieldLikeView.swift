@@ -54,18 +54,10 @@ struct LicenseText: View {
     let hangulSize: CGFloat
     var body: some View {
         HStack(spacing: 0) {
-            if text.first?.isNumber == false {
-//                VStack {
-                    ForEach(Array(text.enumerated()), id: \.offset) { index, element in
-                        Text(String(element))
-                    }
-//                }
-            } else {
-                ForEach(Array(text.enumerated()), id: \.offset) { index, element in
-                    Text(String(element))
-                        .customFont(fontWeight: .bold, size: element.isNumber ? numberSize : hangulSize)
-                        .padding(.horizontal, element.isLetter ? 4 : 0)
-                }
+            ForEach(Array(text.enumerated()), id: \.offset) { index, element in
+                Text(String(element))
+                    .customFont(fontWeight: .bold, size: element.isNumber ? numberSize : hangulSize)
+                    .padding(.horizontal, element.isLetter ? 4 : 0)
             }
         }
         .frame(minHeight: numberSize)
@@ -87,3 +79,4 @@ struct CursorView: View {
             .padding(.vertical, 3)
     }
 }
+
