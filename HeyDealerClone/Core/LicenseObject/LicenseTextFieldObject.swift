@@ -17,8 +17,8 @@ struct LicenseTextFieldObject: View {
     var body: some View {
         textFieldLikeView
             .padding(.vertical, 6)
-            .background { backgroundLicense }
-            .padding(.horizontal, licenseType != .green ? 24 : 80)
+            .background { backgroundLicenseView }
+            .padding(.horizontal, licenseType != .green ? 24 : 82)
     }
 }
 
@@ -37,7 +37,7 @@ private extension LicenseTextFieldObject {
         }
     }
     
-    var backgroundLicense: some View {
+    var backgroundLicenseView: some View {
         RoundedRectangle(cornerRadius: 10)
             .fill(.shadow(.inner(color: .gray.opacity(0.4), radius: 1, x: 1, y: 1)))
             .foregroundColor(switchBackgroundColor())
@@ -119,7 +119,7 @@ private extension LicenseTextFieldObject {
     }
     
     var greenLicense: some View {
-        LazyVGrid(columns: [GridItem(.flexible())], spacing: 10) {
+        LazyVGrid(columns: [GridItem(.flexible())], spacing: 14) {
             HStack(spacing: 10) {
                 circle
                     .matchedGeometryEffect(id: "circle1", in: namespace)
