@@ -40,6 +40,7 @@
 		9DA8654B2AED495B00A6682B /* LicenseTextFieldObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8654A2AED495B00A6682B /* LicenseTextFieldObject.swift */; };
 		9DA8654D2AEE183B00A6682B /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8654C2AEE183B00A6682B /* Common.swift */; };
 		9DA865522AEE5FB000A6682B /* LicenseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA865512AEE5FB000A6682B /* LicenseType.swift */; };
+		9DA865542AEE8E7E00A6682B /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA865532AEE8E7E00A6682B /* UIApplication+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		9DA8654A2AED495B00A6682B /* LicenseTextFieldObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseTextFieldObject.swift; sourceTree = "<group>"; };
 		9DA8654C2AEE183B00A6682B /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		9DA865512AEE5FB000A6682B /* LicenseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseType.swift; sourceTree = "<group>"; };
+		9DA865532AEE8E7E00A6682B /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				9D4167DB2ADAE8EA00DA3983 /* LookArounds */,
 				9D4167DA2ADAE8E400DA3983 /* Buys */,
 				9D4167D92ADAE8CD00DA3983 /* Sells */,
+				9D8FCFA82ADA910D00009528 /* Onboardings */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -159,7 +162,6 @@
 				9D70CF552AD99A2B004A329D /* ContentView.swift */,
 				9DA8654C2AEE183B00A6682B /* Common.swift */,
 				9D4167DC2ADAE8F600DA3983 /* Core */,
-				9D8FCFA82ADA910D00009528 /* Onboardings */,
 				9D70CF7A2AD9A927004A329D /* WebView.swift */,
 				9D70CF632AD99C00004A329D /* Utilities */,
 				9D70CF572AD99A2C004A329D /* Assets.xcassets */,
@@ -183,6 +185,7 @@
 				9D70CF642AD99C0D004A329D /* Fonts */,
 				9D07C2B12ADBE16D00C5A2C9 /* CharacterSet.swift */,
 				9DA865432AED201800A6682B /* String.swift */,
+				9DA865532AEE8E7E00A6682B /* UIApplication+.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				9D4167E22ADAE94700DA3983 /* SellView.swift in Sources */,
 				9DA8654B2AED495B00A6682B /* LicenseTextFieldObject.swift in Sources */,
 				9D4167E42ADAE9BD00DA3983 /* NormalLicenseObject.swift in Sources */,
+				9DA865542AEE8E7E00A6682B /* UIApplication+.swift in Sources */,
 				9D70CF7B2AD9A927004A329D /* WebView.swift in Sources */,
 				9D4167D82ADAD84B00DA3983 /* Color.swift in Sources */,
 				9D07C2B22ADBE16D00C5A2C9 /* CharacterSet.swift in Sources */,
