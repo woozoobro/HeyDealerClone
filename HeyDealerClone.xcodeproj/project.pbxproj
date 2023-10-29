@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9D07C2B02ADBB3CD00C5A2C9 /* TextFieldLikeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D07C2AF2ADBB3CD00C5A2C9 /* TextFieldLikeView.swift */; };
 		9D07C2B22ADBE16D00C5A2C9 /* CharacterSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D07C2B12ADBE16D00C5A2C9 /* CharacterSet.swift */; };
 		9D4167D82ADAD84B00DA3983 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4167D72ADAD84B00DA3983 /* Color.swift */; };
 		9D4167DE2ADAE90900DA3983 /* MainTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4167DD2ADAE90900DA3983 /* MainTitle.swift */; };
@@ -43,7 +42,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9D07C2AF2ADBB3CD00C5A2C9 /* TextFieldLikeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldLikeView.swift; sourceTree = "<group>"; };
 		9D07C2B12ADBE16D00C5A2C9 /* CharacterSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSet.swift; sourceTree = "<group>"; };
 		9D4167D72ADAD84B00DA3983 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		9D4167DD2ADAE90900DA3983 /* MainTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTitle.swift; sourceTree = "<group>"; };
@@ -129,7 +127,6 @@
 				9D4167DD2ADAE90900DA3983 /* MainTitle.swift */,
 				9D4167E52ADAEEEC00DA3983 /* LicenseTextField.swift */,
 				9DA8654A2AED495B00A6682B /* LicenseTextFieldObject.swift */,
-				9D07C2AF2ADBB3CD00C5A2C9 /* TextFieldLikeView.swift */,
 				9D4167E72ADAF7AE00DA3983 /* Sidebar.swift */,
 				9D4167DB2ADAE8EA00DA3983 /* LookArounds */,
 				9D4167DA2ADAE8E400DA3983 /* Buys */,
@@ -331,7 +328,6 @@
 				9D70CF7D2AD9B0B0004A329D /* OnboardingAnimationView.swift in Sources */,
 				9DA8654D2AEE183B00A6682B /* Common.swift in Sources */,
 				9D70CF562AD99A2B004A329D /* ContentView.swift in Sources */,
-				9D07C2B02ADBB3CD00C5A2C9 /* TextFieldLikeView.swift in Sources */,
 				9D4167E02ADAE92900DA3983 /* BuyView.swift in Sources */,
 				9D8FCFA32ADA54F700009528 /* CustomSceneView.swift in Sources */,
 				9D8FCFA72ADA90E700009528 /* MainCustomTabBar.swift in Sources */,
