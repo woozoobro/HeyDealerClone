@@ -13,14 +13,14 @@ struct ContentView: View {
     @State private var isSidebarVisible: Bool = false
     @AppStorage("showMain") var showMain: Bool = false
     @FocusState private var buyFocused: Bool
-    @State private var path: NavigationPath = .init()
+    @StateObject private var navPathFinder = NavigationPathFinder.shared
     
     init() { UITabBar.appearance().isHidden = true }
     
     var body: some View {
         Group {
             if showMainView {
-                NavigationStack(path: $path) {
+                NavigationStack(path: $navPathFinder.path) {
                     ZStack {
                         ZStack(alignment: .top) {
                             backgroundView
@@ -28,11 +28,11 @@ struct ContentView: View {
                         }
                         Sidebar(isSidebarVisible: $isSidebarVisible)
                     }
-                    .navigationDestination(for: Bool.self) { showNavigation in
-                        Color.white.ignoresSafeArea()
-                            .toolbarRole(.editor)
+                    .navigationDestination(for: ViewOptions.self) { option in
+                        option.view()
                     }
                 }
+                .environmentObject(navPathFinder)
             } else {
                 OnboardingView(showMainView: $showMainView)
             }
@@ -74,7 +74,7 @@ private extension ContentView {
             }
             
             TabView(selection: $currentTab) {
-                SellView(path: $path)
+                SellView()
                     .tag(MainTab.sell)
                     .background(.white)
                     .ignoresSafeArea([.all, .keyboard], edges: .bottom)

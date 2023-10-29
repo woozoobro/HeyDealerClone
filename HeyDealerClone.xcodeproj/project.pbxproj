@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9D07C2B22ADBE16D00C5A2C9 /* CharacterSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D07C2B12ADBE16D00C5A2C9 /* CharacterSet.swift */; };
+		9D29E44F2AEE96170059B45E /* NavigationPathFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D29E44E2AEE96170059B45E /* NavigationPathFinder.swift */; };
+		9D29E4512AEE96500059B45E /* SellDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D29E4502AEE96500059B45E /* SellDestinationView.swift */; };
+		9D29E4542AEE97650059B45E /* LoadingToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D29E4532AEE97650059B45E /* LoadingToast.swift */; };
 		9D4167D82ADAD84B00DA3983 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4167D72ADAD84B00DA3983 /* Color.swift */; };
 		9D4167DE2ADAE90900DA3983 /* MainTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4167DD2ADAE90900DA3983 /* MainTitle.swift */; };
 		9D4167E02ADAE92900DA3983 /* BuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4167DF2ADAE92900DA3983 /* BuyView.swift */; };
@@ -45,6 +48,9 @@
 
 /* Begin PBXFileReference section */
 		9D07C2B12ADBE16D00C5A2C9 /* CharacterSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSet.swift; sourceTree = "<group>"; };
+		9D29E44E2AEE96170059B45E /* NavigationPathFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPathFinder.swift; sourceTree = "<group>"; };
+		9D29E4502AEE96500059B45E /* SellDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellDestinationView.swift; sourceTree = "<group>"; };
+		9D29E4532AEE97650059B45E /* LoadingToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingToast.swift; sourceTree = "<group>"; };
 		9D4167D72ADAD84B00DA3983 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		9D4167DD2ADAE90900DA3983 /* MainTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTitle.swift; sourceTree = "<group>"; };
 		9D4167DF2ADAE92900DA3983 /* BuyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyView.swift; sourceTree = "<group>"; };
@@ -93,6 +99,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D29E4522AEE97520059B45E /* ReusableComponent */ = {
+			isa = PBXGroup;
+			children = (
+				9D29E4532AEE97650059B45E /* LoadingToast.swift */,
+			);
+			path = ReusableComponent;
+			sourceTree = "<group>";
+		};
 		9D4167D62ADAD83F00DA3983 /* Colors */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				9D4167E12ADAE94700DA3983 /* SellView.swift */,
+				9D29E4502AEE96500059B45E /* SellDestinationView.swift */,
 			);
 			path = Sells;
 			sourceTree = "<group>";
@@ -127,6 +142,7 @@
 		9D4167DC2ADAE8F600DA3983 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				9D29E4522AEE97520059B45E /* ReusableComponent */,
 				9DA8654F2AEE5F6F00A6682B /* MainComponent */,
 				9DA8654E2AEE5F3B00A6682B /* LicenseObject */,
 				9D4167DB2ADAE8EA00DA3983 /* LookArounds */,
@@ -251,6 +267,7 @@
 				9D8FCFA62ADA90E700009528 /* MainCustomTabBar.swift */,
 				9D4167DD2ADAE90900DA3983 /* MainTitle.swift */,
 				9D4167E72ADAF7AE00DA3983 /* Sidebar.swift */,
+				9D29E44E2AEE96170059B45E /* NavigationPathFinder.swift */,
 			);
 			path = MainComponent;
 			sourceTree = "<group>";
@@ -343,6 +360,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D29E44F2AEE96170059B45E /* NavigationPathFinder.swift in Sources */,
+				9D29E4512AEE96500059B45E /* SellDestinationView.swift in Sources */,
 				9DA865442AED201800A6682B /* String.swift in Sources */,
 				9D70CF622AD99B45004A329D /* OnboardingView.swift in Sources */,
 				9D8FCFA52ADA55A200009528 /* CarView.swift in Sources */,
@@ -364,6 +383,7 @@
 				9D8FCFA32ADA54F700009528 /* CustomSceneView.swift in Sources */,
 				9D8FCFA72ADA90E700009528 /* MainCustomTabBar.swift in Sources */,
 				9D70CF662AD99C1B004A329D /* FontManager.swift in Sources */,
+				9D29E4542AEE97650059B45E /* LoadingToast.swift in Sources */,
 				9D70CF542AD99A2B004A329D /* HeyDealerCloneApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
