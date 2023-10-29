@@ -13,7 +13,7 @@
 		9D4167DE2ADAE90900DA3983 /* MainTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4167DD2ADAE90900DA3983 /* MainTitle.swift */; };
 		9D4167E02ADAE92900DA3983 /* BuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4167DF2ADAE92900DA3983 /* BuyView.swift */; };
 		9D4167E22ADAE94700DA3983 /* SellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4167E12ADAE94700DA3983 /* SellView.swift */; };
-		9D4167E42ADAE9BD00DA3983 /* LicenseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4167E32ADAE9BD00DA3983 /* LicenseObject.swift */; };
+		9D4167E42ADAE9BD00DA3983 /* NormalLicenseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4167E32ADAE9BD00DA3983 /* NormalLicenseObject.swift */; };
 		9D4167E62ADAEEEC00DA3983 /* LicenseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4167E52ADAEEEC00DA3983 /* LicenseTextField.swift */; };
 		9D4167E82ADAF7AE00DA3983 /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4167E72ADAF7AE00DA3983 /* Sidebar.swift */; };
 		9D70CF542AD99A2B004A329D /* HeyDealerCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D70CF532AD99A2B004A329D /* HeyDealerCloneApp.swift */; };
@@ -37,6 +37,9 @@
 		9D8FCFA32ADA54F700009528 /* CustomSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8FCFA22ADA54F700009528 /* CustomSceneView.swift */; };
 		9D8FCFA52ADA55A200009528 /* CarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8FCFA42ADA55A200009528 /* CarView.swift */; };
 		9D8FCFA72ADA90E700009528 /* MainCustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8FCFA62ADA90E700009528 /* MainCustomTabBar.swift */; };
+		9DA865442AED201800A6682B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA865432AED201800A6682B /* String.swift */; };
+		9DA8654B2AED495B00A6682B /* LicenseTextFieldObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8654A2AED495B00A6682B /* LicenseTextFieldObject.swift */; };
+		9DA8654D2AEE183B00A6682B /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8654C2AEE183B00A6682B /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +49,7 @@
 		9D4167DD2ADAE90900DA3983 /* MainTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTitle.swift; sourceTree = "<group>"; };
 		9D4167DF2ADAE92900DA3983 /* BuyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyView.swift; sourceTree = "<group>"; };
 		9D4167E12ADAE94700DA3983 /* SellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellView.swift; sourceTree = "<group>"; };
-		9D4167E32ADAE9BD00DA3983 /* LicenseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseObject.swift; sourceTree = "<group>"; };
+		9D4167E32ADAE9BD00DA3983 /* NormalLicenseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalLicenseObject.swift; sourceTree = "<group>"; };
 		9D4167E52ADAEEEC00DA3983 /* LicenseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseTextField.swift; sourceTree = "<group>"; };
 		9D4167E72ADAF7AE00DA3983 /* Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sidebar.swift; sourceTree = "<group>"; };
 		9D70CF502AD99A2B004A329D /* HeyDealerClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeyDealerClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +75,9 @@
 		9D8FCFA22ADA54F700009528 /* CustomSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSceneView.swift; sourceTree = "<group>"; };
 		9D8FCFA42ADA55A200009528 /* CarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarView.swift; sourceTree = "<group>"; };
 		9D8FCFA62ADA90E700009528 /* MainCustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCustomTabBar.swift; sourceTree = "<group>"; };
+		9DA865432AED201800A6682B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		9DA8654A2AED495B00A6682B /* LicenseTextFieldObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseTextFieldObject.swift; sourceTree = "<group>"; };
+		9DA8654C2AEE183B00A6682B /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,7 @@
 				9D8FCFA62ADA90E700009528 /* MainCustomTabBar.swift */,
 				9D4167DD2ADAE90900DA3983 /* MainTitle.swift */,
 				9D4167E52ADAEEEC00DA3983 /* LicenseTextField.swift */,
+				9DA8654A2AED495B00A6682B /* LicenseTextFieldObject.swift */,
 				9D07C2AF2ADBB3CD00C5A2C9 /* TextFieldLikeView.swift */,
 				9D4167E72ADAF7AE00DA3983 /* Sidebar.swift */,
 				9D4167DB2ADAE8EA00DA3983 /* LookArounds */,
@@ -154,6 +161,7 @@
 				9D70CF792AD99C85004A329D /* Info.plist */,
 				9D70CF532AD99A2B004A329D /* HeyDealerCloneApp.swift */,
 				9D70CF552AD99A2B004A329D /* ContentView.swift */,
+				9DA8654C2AEE183B00A6682B /* Common.swift */,
 				9D4167DC2ADAE8F600DA3983 /* MainView */,
 				9D8FCFA82ADA910D00009528 /* Onboardings */,
 				9D70CF7A2AD9A927004A329D /* WebView.swift */,
@@ -178,6 +186,7 @@
 				9D4167D62ADAD83F00DA3983 /* Colors */,
 				9D70CF642AD99C0D004A329D /* Fonts */,
 				9D07C2B12ADBE16D00C5A2C9 /* CharacterSet.swift */,
+				9DA865432AED201800A6682B /* String.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -205,7 +214,7 @@
 				9D8FCFA92ADA912600009528 /* SceneKitView */,
 				9D70CF612AD99B45004A329D /* OnboardingView.swift */,
 				9D70CF7C2AD9B0B0004A329D /* OnboardingAnimationView.swift */,
-				9D4167E32ADAE9BD00DA3983 /* LicenseObject.swift */,
+				9DA865452AED41E200A6682B /* LicenseObject */,
 			);
 			path = Onboardings;
 			sourceTree = "<group>";
@@ -217,6 +226,14 @@
 				9D8FCFA42ADA55A200009528 /* CarView.swift */,
 			);
 			path = SceneKitView;
+			sourceTree = "<group>";
+		};
+		9DA865452AED41E200A6682B /* LicenseObject */ = {
+			isa = PBXGroup;
+			children = (
+				9D4167E32ADAE9BD00DA3983 /* NormalLicenseObject.swift */,
+			);
+			path = LicenseObject;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,17 +316,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DA865442AED201800A6682B /* String.swift in Sources */,
 				9D70CF622AD99B45004A329D /* OnboardingView.swift in Sources */,
 				9D8FCFA52ADA55A200009528 /* CarView.swift in Sources */,
 				9D4167E82ADAF7AE00DA3983 /* Sidebar.swift in Sources */,
 				9D4167DE2ADAE90900DA3983 /* MainTitle.swift in Sources */,
 				9D4167E22ADAE94700DA3983 /* SellView.swift in Sources */,
-				9D4167E42ADAE9BD00DA3983 /* LicenseObject.swift in Sources */,
+				9DA8654B2AED495B00A6682B /* LicenseTextFieldObject.swift in Sources */,
+				9D4167E42ADAE9BD00DA3983 /* NormalLicenseObject.swift in Sources */,
 				9D70CF7B2AD9A927004A329D /* WebView.swift in Sources */,
 				9D4167D82ADAD84B00DA3983 /* Color.swift in Sources */,
 				9D07C2B22ADBE16D00C5A2C9 /* CharacterSet.swift in Sources */,
 				9D4167E62ADAEEEC00DA3983 /* LicenseTextField.swift in Sources */,
 				9D70CF7D2AD9B0B0004A329D /* OnboardingAnimationView.swift in Sources */,
+				9DA8654D2AEE183B00A6682B /* Common.swift in Sources */,
 				9D70CF562AD99A2B004A329D /* ContentView.swift in Sources */,
 				9D07C2B02ADBB3CD00C5A2C9 /* TextFieldLikeView.swift in Sources */,
 				9D4167E02ADAE92900DA3983 /* BuyView.swift in Sources */,

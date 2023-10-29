@@ -40,7 +40,7 @@ struct CarView: View {
                 }
             
             if showLicense {
-                LicenseObject {
+                NormalLicenseObject {
                     MockLicenseText()
                 }
                 .rotation3DEffect(.zero, axis: (x: 0, y: 0, z: 0))

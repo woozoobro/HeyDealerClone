@@ -16,7 +16,7 @@ extension CharacterSet {
         return (value >= 0x1100 && value <= 0x11FF) ||  // 초성
                (value >= 0x3130 && value <= 0x318F) ||  // 중성, 종성
                (value >= 0xAC00 && value <= 0xD7AF)     // 완성형 한글
-    }        
+    }
     
     static func filterHangulAndNumbers(from string: String) -> String {
         let allowedCharacters = modernHangul.union(.numbers)

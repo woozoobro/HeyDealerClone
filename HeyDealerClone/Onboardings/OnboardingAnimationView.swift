@@ -34,12 +34,14 @@ struct LicenseAnimation: View {
             let radius = diameter / 2
             let angle = progress * .pi
             
-            LicenseObject {
-                if title == "헤이딜러 짱짱" {
-                    MockLicenseText2(title: title)
-                } else {
-                    MockLicenseText()
-                }
+            NormalLicenseObject {
+                Group {
+                    if title == "헤이딜러 짱짱" {
+                        MockLicenseText2(title: title)
+                    } else {
+                        MockLicenseText()
+                    }
+                }                
             }
             .offset(x: 180)
             .rotation3DEffect(Angle(degrees: 0), axis: (x: 0, y: 0, z: 0))

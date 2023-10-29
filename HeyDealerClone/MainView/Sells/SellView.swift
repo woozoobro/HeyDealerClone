@@ -7,14 +7,16 @@
 
 import SwiftUI
 
+enum LicenseType {
+    case normal
+    case yellow
+    case green
+}
+
 final class SellViewModel: ObservableObject {
     @Published var text: String = ""
     @Published var licenseType: LicenseType = .normal
-    enum LicenseType {
-        case normal
-        case yellow
-        case green
-    }
+    
     
     func updateText(newValue: String) {
         // 숫자와 한글 이외에 필터링
@@ -25,7 +27,6 @@ final class SellViewModel: ObservableObject {
         } else {
             filteredValue = processHangulCase(in: filteredValue)
         }
-        print(licenseType)
         text = filteredValue
     }
     
@@ -59,8 +60,7 @@ final class SellViewModel: ObservableObject {
         if numbersAndRest.count > 0 {
             let restString = processNumberCase(in: String(numbersAndRest))
             result += restString
-            updateLicenseType(for: restString)
-            print(restString)
+            updateLicenseType(for: restString)            
         }
         
         return result
@@ -89,20 +89,14 @@ final class SellViewModel: ObservableObject {
     }
 }
 
-extension String {
-    var containsHangul: Bool {
-        unicodeScalars.contains { CharacterSet.isJamo($0) }
-    }
-}
-
 struct SellView: View {
     @StateObject private var vm: SellViewModel = SellViewModel()
     
     var body: some View {
         VStack(spacing: 40) {
-            MainTitle(title: "먼저, 내 차 시세를\n알아볼까요?", fontColor: .theme.background)
+            MainTitle(title: "먼저, 내 차 시세를\n알아볼까요?", fontColor: .theme.title)
             
-            LicenseTextField(text: $vm.text)
+            LicenseTextField(text: $vm.text, licenseType: $vm.licenseType)
                 .onChange(of: vm.text) { newValue in
                     vm.updateText(newValue: newValue)
                 }

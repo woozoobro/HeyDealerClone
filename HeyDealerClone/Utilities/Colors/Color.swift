@@ -13,4 +13,9 @@ extension Color {
 
 struct ColorTheme {
     let background = Color("BackgroundColor")
+    let greenLicense = Color("GreenLicenseColor")
+    let yellowLicense = Color("YelloLicenseColor")
+    let greenCircle = Color("GreenCircleColor")
+    let blackLicenseText = Color("BlackLicenseText")
+    let title = Color("TitleColor")
 }

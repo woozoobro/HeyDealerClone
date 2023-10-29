@@ -7,24 +7,25 @@
 
 import SwiftUI
 
-struct LicenseObject<Content: View>: View {
+struct NormalLicenseObject<Content: View>: View {
     @ViewBuilder var content: Content
     var body: some View {
         HStack(spacing: 0) {
             circle
+                .padding(.leading, 12)
             content
                 .frame(maxWidth: .infinity)
             circle
-        }        
-        .padding(.horizontal, 12)
-        .padding(.vertical, 8)
+                .padding(.trailing, 12)
+        }
+        .padding(.vertical, 6)
         .background {
             RoundedRectangle(cornerRadius: 10)
                 .fill(.shadow(.inner(color: .gray.opacity(0.4), radius: 1, x: 1, y: 1)))
                 .foregroundColor(.white)
-                .padding(3)
+                .padding(2)
                 .background { RoundedRectangle(cornerRadius: 12).fill(.black) }
-                .padding(3)
+                .padding(2)
                 .background {
                     RoundedRectangle(cornerRadius: 14)
                         .fill(.white)
@@ -37,16 +38,17 @@ struct LicenseObject<Content: View>: View {
     private var circle: some View {
         Circle()
             .fill(.shadow(.inner(color: .white.opacity(0.1), radius: 0.5, x: -0.5, y: 1)))
-            .shadow(color: .gray.opacity(0.4), radius: 0.8, x: 0, y: 1)
-            .shadow(color: .gray.opacity(0.2), radius: 1, x: 1, y: 0.5)
             .foregroundColor(.white)
+            .shadow(color: .black.opacity(0.4), radius: 0.8, x: 0, y: 1)
+            .shadow(color: .black.opacity(0.2), radius: 1, x: 1, y: 0.5)
             .frame(width: 11, height: 11)
     }
 }
 
+
 struct MockLicenseText: View {
-    private let numberFontSize: CGFloat = 50
-    private let hangulFontSize: CGFloat = 38
+    private let numberFontSize: CGFloat = TEXTFIELD_NUMBER_SIZE
+    private let hangulFontSize: CGFloat = TEXTFIELD_HANGUL_SIZE
     
     var body: some View {
         HStack(alignment: .center, spacing: 4) {
@@ -66,7 +68,7 @@ struct MockLicenseText: View {
 
 struct MockLicenseText2: View {
     let title: String
-    private let numberFontSize: CGFloat = 50
+    private let numberFontSize: CGFloat = TEXTFIELD_NUMBER_SIZE
     
     var body: some View {
         
