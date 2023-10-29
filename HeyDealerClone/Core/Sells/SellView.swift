@@ -25,6 +25,9 @@ final class SellViewModel: ObservableObject {
             .sink { [weak self] isSearching in
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     self?.showNavigation = isSearching
+                    withAnimation(.spring()) {
+                        self?.search = false
+                    }
                 }
             }
             .store(in: &cancellables)
@@ -35,7 +38,7 @@ struct SellView: View {
     @StateObject private var vm: SellViewModel = SellViewModel()
     @State private var text: String = ""
     @Namespace private var namespace
-//    @State private var path: NavigationPath = .init()
+    @Binding var path: NavigationPath
     
     
     var body: some View {
@@ -51,6 +54,9 @@ struct SellView: View {
                 LoadingToast()
                     .transition(.move(edge: .bottom))
             }
+        }
+        .onChange(of: vm.showNavigation) { newValue in
+            path.append(newValue)
         }
     }
 }

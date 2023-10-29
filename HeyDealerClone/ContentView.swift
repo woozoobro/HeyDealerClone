@@ -13,71 +13,25 @@ struct ContentView: View {
     @State private var isSidebarVisible: Bool = false
     @AppStorage("showMain") var showMain: Bool = false
     @FocusState private var buyFocused: Bool
-//    @State private var sellBlink: Bool = false
+    @State private var path: NavigationPath = .init()
     
-    init() {
-        UITabBar.appearance().isHidden = true
-    }
+    init() { UITabBar.appearance().isHidden = true }
     
     var body: some View {
         Group {
             if showMainView {
-                ZStack {
-                    ZStack(alignment: .top) {
-                        Group {
-                            if currentTab == .sell {
-                                Color.theme.background
-                            } else {
-                                Color.white
-                            }
+                NavigationStack(path: $path) {
+                    ZStack {
+                        ZStack(alignment: .top) {
+                            backgroundView
+                            mainView
                         }
-                        .ignoresSafeArea()
-                        
-                        VStack(spacing: 0) {
-                            HStack(spacing: 0) {
-                                MainCustomTabBar(currentTab: $currentTab)
-                                    .preferredColorScheme(currentTab == .sell ? isSidebarVisible ? .light : .dark : .light)
-                                
-                                Button {
-                                    isSidebarVisible.toggle()
-                                    UIApplication.shared.endEditing()
-                                    buyFocused = false
-                                } label: {
-                                    Image(systemName: "list.bullet")
-                                        .foregroundColor(currentTab == .sell ? .white : .theme.background)
-                                }
-                                .padding(.trailing,20)
-                            }
-                            
-                            TabView(selection: $currentTab) {
-                                SellView()
-                                    .tag(MainTab.sell)
-                                    .background(.white)
-                                    .ignoresSafeArea([.all, .keyboard], edges: .bottom)
-                                    .onTapGesture {
-                                        UIApplication.shared.endEditing()
-                                    }
-                                
-                                BuyView()
-                                    .tag(MainTab.buy)
-                                    .focused($buyFocused)
-                                    .onAppear { buyFocused = true }
-                                    .onTapGesture { buyFocused = false }
-                                
-                                ScrollView() {
-                                    Text("차구경!")
-                                    Rectangle()
-                                }
-                                .scrollDisabled(true)
-                                .background(Color.theme.background)
-                                .tag(MainTab.lookAround)
-                            }
-                            .clipShape(RoundedRectangle(cornerRadius: 18))
-                            .ignoresSafeArea([.all, .keyboard], edges: .bottom)
-                        }
+                        Sidebar(isSidebarVisible: $isSidebarVisible)
                     }
-                                                            
-                    Sidebar(isSidebarVisible: $isSidebarVisible)
+                    .navigationDestination(for: Bool.self) { showNavigation in
+                        Color.white.ignoresSafeArea()
+                            .toolbarRole(.editor)
+                    }
                 }
             } else {
                 OnboardingView(showMainView: $showMainView)
@@ -89,4 +43,61 @@ struct ContentView: View {
     }
 }
 
-
+//MARK: - Component
+private extension ContentView {
+    var backgroundView: some View {
+        Group {
+            if currentTab == .sell {
+                Color.theme.background
+            } else {
+                Color.white
+            }
+        }
+        .ignoresSafeArea()
+    }
+    
+    var mainView: some View {
+        VStack(spacing: 0) {
+            HStack(spacing: 0) {
+                MainCustomTabBar(currentTab: $currentTab)
+                    .preferredColorScheme(currentTab == .sell ? isSidebarVisible ? .light : .dark : .light)
+                
+                Button {
+                    isSidebarVisible.toggle()
+                    UIApplication.shared.endEditing()
+                    buyFocused = false
+                } label: {
+                    Image(systemName: "list.bullet")
+                        .foregroundColor(currentTab == .sell ? .white : .theme.background)
+                }
+                .padding(.trailing,20)
+            }
+            
+            TabView(selection: $currentTab) {
+                SellView(path: $path)
+                    .tag(MainTab.sell)
+                    .background(.white)
+                    .ignoresSafeArea([.all, .keyboard], edges: .bottom)
+                    .onTapGesture {
+                        UIApplication.shared.endEditing()
+                    }
+                
+                BuyView()
+                    .tag(MainTab.buy)
+                    .focused($buyFocused)
+                    .onAppear { buyFocused = true }
+                    .onTapGesture { buyFocused = false }
+                
+                ScrollView() {
+                    Text("차구경!")
+                    Rectangle()
+                }
+                .scrollDisabled(true)
+                .background(Color.theme.background)
+                .tag(MainTab.lookAround)
+            }
+            .clipShape(RoundedRectangle(cornerRadius: 18))
+            .ignoresSafeArea([.all, .keyboard], edges: .bottom)
+        }
+    }
+}
