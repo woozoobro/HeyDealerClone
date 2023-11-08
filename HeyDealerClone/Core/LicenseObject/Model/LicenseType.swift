@@ -8,7 +8,7 @@
 import Foundation
 
 enum LicenseType {
-    case normal
-    case yellow
-    case green
+   case normal
+   case yellow
+   case green
 }

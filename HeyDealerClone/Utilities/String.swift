@@ -8,7 +8,7 @@
 import Foundation
 
 extension String {
-    var containsHangul: Bool {
-        unicodeScalars.contains { CharacterSet.isJamo($0) }
-    }
+   var containsHangul: Bool {
+      unicodeScalars.contains { CharacterSet.isJamo($0) }
+   }
 }

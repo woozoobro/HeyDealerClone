@@ -8,23 +8,23 @@
 import SwiftUI
 
 final class NavigationPathFinder: ObservableObject {
-    static let shared = NavigationPathFinder()
-    private init() { }
-    @Published var path: NavigationPath = .init()
-    
-    func addPath(option: ViewOptions) {
-        path.append(option)
-    }
-    func popToRoot() {
-        path = .init()
-    }
+   static let shared = NavigationPathFinder()
+   private init() { }
+   @Published var path: NavigationPath = .init()
+   
+   func addPath(option: ViewOptions) {
+      path.append(option)
+   }
+   func popToRoot() {
+      path = .init()
+   }
 }
 
 enum ViewOptions: Hashable {
-    case sell(text: String)
-    @ViewBuilder func view() -> some View {
-        switch self {
-            case .sell(text: let license): SellDestinationView(license: license)
-        }
-    }
+   case sell(text: String)
+   @ViewBuilder func view() -> some View {
+      switch self {
+         case .sell(text: let license): SellDestinationView(license: license)
+      }
+   }
 }
