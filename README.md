@@ -113,11 +113,12 @@ string에 입력 가능한 텍스트를 필터링할 때
 번호판 입력이 완료되고 나면 토스트 뷰가 등장한 이후에  
 API요청을 통해 데이터를 가져오는 것으로 유추했습니다.  
 
-https://www.data.go.kr/data/15071233/openapi.do  
-https://www.car365.go.kr/web/contents/usedcar_carcompare.do  
-
 Firebase이외에 Alamofire나 Moya를 사용한 네트워킹 작업은 
 아직 경험이 없어 조금 더 친숙해진 이후에 작업을 진행해야겠다는 판단을 했습니다. 
 
 그리고 공공 데이터 중 차량 번호 조회 api를 발견했습니다.  
+
+https://www.data.go.kr/data/15071233/openapi.do  
+https://www.car365.go.kr/web/contents/usedcar_carcompare.do  
+
 어떻게 하면 원하는 데이터만 요청해 가져올 수 있을지도 고민이 되었습니다.
