@@ -10,7 +10,7 @@ import UIKit
 
 ///키보드 내리기
 extension UIApplication {
-    func endEditing() {
-        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-    }
+   func endEditing() {
+      sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+   }
 }
